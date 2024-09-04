@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWeather, fetchForecast } from '../redux/weatherSlice';
-import { RootState } from '../redux/store';
+import { RootState, AppDispatch } from '../redux/store';
 import { FaSearchLocation } from 'react-icons/fa';  // Importing the search icon
 import { useNavigate } from 'react-router-dom';  // Importing useHistory for navigation
+// import { AppDispatch } from '../redux/store';  
 
 const WeatherSearch: React.FC = () => {
   const [city, setCity] = useState('');
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
+  // const dispatch = useDispatch<AppDispatch>();
   const weather = useSelector((state: RootState) => state.weather);
   const history = useNavigate();
 

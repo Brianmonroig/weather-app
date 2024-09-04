@@ -11,3 +11,5 @@ export default store;
 
 // Este tipo representa el estado completo del store de Redux
 export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;  // Esto genera el tipo para dispatch
+
