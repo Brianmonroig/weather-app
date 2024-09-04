@@ -18,7 +18,7 @@ const WeatherSearch: React.FC = () => {
     }
     await dispatch(fetchWeather(city));
     await dispatch(fetchForecast(city));
-    history.push('/forecast');  // Navigate to the forecast page after searching
+    history('/forecast');  // Navigate to the forecast page after searching
   };
 
   return (
@@ -30,7 +30,7 @@ const WeatherSearch: React.FC = () => {
           <input
             type="text"
             value={city}
-            onChange={(e) => setCity(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value)}
             placeholder="Enter city"
             className="border pl-10 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
